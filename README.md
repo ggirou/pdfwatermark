@@ -12,42 +12,20 @@ name.
 
 # Usage
 
-`$ python pdfwatermark.py [OPTIONS] FILENAME`
+`$ python pdfwatermark.py [OPTIONS] INPUT_FILENAME OUTPUT_FILENAME`
 
 Use `--help` to see the detailed list of options
-
-## Warning
-By default, `pdfwatermark` watermarks the file in place. No way to 
-'unwatermark' it is provided.
 
 ## Example
 
 **Example 1, "trivial"**
 
-`python pdfwatermark.py -w "WATERMARK" file.pdf`
+`python pdfwatermark.py -w "WATERMARK" input.pdf output.pdf`
 
-Puts a large black text 'WATERMARK' somewhere on the first page of `file.pdf`
+Puts a large black text 'WATERMARK' somewhere on all pages of `input.pdf`
 
 **Example 2, "simple"**
 
-`python pdfwatermark.py -w "WATERMARK" -c "#FF0000" -o 0.3 -x 200 -y 150  file.pdf` 
+`python pdfwatermark.py -w "WATERMARK" -c "#FF0000" -o 0.3 -x 200 -y 150 -a 30  input.pdf output.pdf` 
 
-Puts a large transparent pink 'WATERMARK' at the given coordinates 
-on the first page of `file.pdf`
-
-
-**Example 2, "pdfwatermark in full glory"**
-
-`python pdfwatermark.py -c "#FF0000" -o 0.3 -x 200 -y 150  -w "({})" -r "^(\d+).+$" -d meaning.pdf 42-file.pdf`
-
-Puts a large transparent pink '(42)' at the given coordinates 
-on the first page of the content of `42-file.pdf` and saves the resulting content
-as `meaning.pdf` 
- 
-
-# Todo
-* add a possibility to add watermarks on pages other than first
-* make sure it works nicely with paper formats other than DIN A4
-* handle (at least some) errors
-
- 
+Puts a large transparent rotated pink 'WATERMARK' at the given coordinates all pages of `input.pdf`
