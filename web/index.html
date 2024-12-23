@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Watermark</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Ajouter un Watermark à un PDF</h1>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-6">
+                <form id="pdfForm">
+                    <div class="form-group">
+                        <label for="pdfFile">Choisir un fichier PDF</label>
+                        <input type="file" class="form-control" id="pdfFile" accept="application/pdf" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="watermarkText">Texte du Watermark</label>
+                        <input type="text" class="form-control" id="watermarkText" placeholder="Entrez le texte du watermark" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Ajouter Watermark</button>
+                </form>
+                <div class="mt-4">
+                    <h3>PDF Modifié</h3>
+                    <embed id="pdfViewer" type="application/pdf" width="100%" height="500px">
+                    <a id="downloadLink" href="#" class="btn btn-success btn-block mt-2" download="watermarked.pdf">Télécharger PDF</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
