@@ -8,12 +8,14 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+bin/
 build/
 develop-eggs/
 dist/
 downloads/
 eggs/
 .eggs/
+include/
 lib/
 lib64/
 parts/
@@ -102,3 +104,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+*.pdf
+cni.sh
+passeport.sh
